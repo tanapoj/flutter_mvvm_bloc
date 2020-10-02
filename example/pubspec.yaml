@@ -1,0 +1,19 @@
+name: mvvm_bloc_example
+version: 0.0.2
+author: Tanapoj Chaivanichanan <tanapoj@centrilliontech.co.th>
+homepage: https://github.com/nartra/flutter_mvvm_arch
+
+environment:
+  sdk: ">=2.6.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  mvvm_bloc: 0.0.2
+  flutter_live_data: 0.0.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:

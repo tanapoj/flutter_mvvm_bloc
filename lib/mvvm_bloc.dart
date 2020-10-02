@@ -63,35 +63,39 @@ abstract class View<Base extends _BaseStatefulWidget, VM extends ViewModel> exte
   Widget build(BuildContext context);
 
   Widget $watch<T>(
-      LiveData<T> $viewModel, {
-        @required Widget Function(BuildContext context, T value) builder,
-      }) {
-    return bloc.$watch($viewModel, builder: builder);
+    LiveData<T> $viewModel, {
+    Symbol id,
+    @required Widget Function(BuildContext context, T value) builder,
+  }) {
+    return bloc.$watch($viewModel, id: id, builder: builder);
   }
 
   Widget $if<T extends bool>(
-      LiveData<T> $viewModel, {
-        bool Function(T) predicate,
-        @required Widget Function(BuildContext context, T value) builder,
-        Widget Function(BuildContext context, T value) $else,
-      }) {
-    return bloc.$if($viewModel, predicate: predicate, builder: builder, $else: $else);
+    LiveData<T> $viewModel, {
+    Symbol id,
+    bool Function(T) predicate,
+    @required Widget Function(BuildContext context, T value) builder,
+    Widget Function(BuildContext context, T value) $else,
+  }) {
+    return bloc.$if($viewModel, id: id, predicate: predicate, builder: builder, $else: $else);
   }
 
   Widget $switch<T>(
-      LiveData<T> $viewModel, {
-        @required Map<T, Widget Function(BuildContext context, T value)> builders,
-        Widget Function(BuildContext context, T value) $default,
-      }) {
-    return bloc.$switch($viewModel, builders: builders, $default: $default);
+    LiveData<T> $viewModel, {
+    Symbol id,
+    @required Map<T, Widget Function(BuildContext context, T value)> builders,
+    Widget Function(BuildContext context, T value) $default,
+  }) {
+    return bloc.$switch($viewModel, id: id, builders: builders, $default: $default);
   }
 
   Widget $guard<T>(
-      LiveData<T> $viewModel, {
-        bool Function(T) check,
-        @required Widget Function(BuildContext context, T value) $else,
-        @required Widget Function(BuildContext context, T value) builder,
-      }) {
-    return bloc.$guard($viewModel, check: check, $else: $else, builder: builder);
+    LiveData<T> $viewModel, {
+    Symbol id,
+    bool Function(T) check,
+    @required Widget Function(BuildContext context, T value) $else,
+    @required Widget Function(BuildContext context, T value) builder,
+  }) {
+    return bloc.$guard($viewModel, id: id, check: check, $else: $else, builder: builder);
   }
 }
