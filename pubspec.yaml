@@ -1,0 +1,19 @@
+name: mvvm_bloc
+description: Flutter MVVM Architecture with BLoC Pattern
+version: 0.0.1
+author:
+homepage: https://www.centrilliontech.co.th
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_live_data: ^0.0.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
