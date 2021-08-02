@@ -1,6 +1,6 @@
 name: mvvm_bloc
 description: Flutter MVVM Architecture with BLoC Pattern
-version: 0.0.2
+version: 1.0.4
 author:
 homepage: https://github.com/tanapoj/flutter_mvvm_bloc
 
@@ -10,7 +10,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_live_data: ^0.0.3
+
+  flutter_live_data: ^1.0.1
+  bloc_builder: ^1.0.1
+
+  provider: ^4.3.2+2
 
 dev_dependencies:
   flutter_test:
